@@ -1,0 +1,136 @@
+<!DOCTYPE html> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Library</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      background-color: #ba8686;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5em;
+      border-bottom: 2px solid #d63131;
+      padding-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #f57e7e;
+      border: 1px solid #de4848;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    li strong {
+      font-size: 1.2em;
+    }
+
+    li ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li ul li {
+      background-color: #eee7e7;
+      border: 1px solid #f6f3f3;
+      margin-bottom: 8px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: none;
+    }
+
+    /* Artist-Specific Colors */
+    .BangtanSonyeondanBTS-title {
+      color: purple;
+      background-color:gray;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .Seventeen-title {
+      color: #F7CAC9;
+      background-color: #92A8D1;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .Blackpink-title {
+      color: pink;
+      background-color: black;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .Coldplay-title {
+      color: yellow;
+      background-color: black;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .ImagineDragons-title {
+      color: #00FFFF;
+      background-color: black;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    /* Column Layout */
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .music-item {
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+  <script>
+    function loadXMLDoc(filename) {
+      if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+      } else {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xhttp.open("GET", filename, false);
+      xhttp.send();
+      return xhttp.responseXML;
+    }
+
+    function displayResult() {
+      xml = loadXMLDoc("music.xml");
+      xsl = loadXMLDoc("music.xsl");
+      if (window.XSLTProcessor) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+        resultDocument = xsltProcessor.transformToFragment(xml, document);
+        document.getElementById("output").appendChild(resultDocument);
+      } else if (window.ActiveXObject) {
+        result = xml.transformNode(xsl);
+        document.getElementById("output").innerHTML = result;
+      }
+    }
+  </script>
+</head>
+<body onload="displayResult()">
+  <div id="output"></div>
+</body>
+</html>

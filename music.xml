@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<music>
+  <song id="1">
+    <songTitle>Spring Day</songTitle>
+    <artist>Bangtan Sonyeondan(BTS)</artist>
+    <albums>
+      <album>2 Cool 4 Skool</album>
+      <album>Dark and Wild</album>
+      <album>WINGS</album>
+    </albums>
+    <debutYear>2013</debutYear>
+  </song>
+  <song id="2">
+    <songTitle>Kidult</songTitle>
+    <artist>Seventeen</artist>
+    <albums>
+      <album>Heng:garæ 7th Mini Album</album>
+      <album>Semicolon 2nd Special Album</album>
+      <album>FACE THE SUN 4th Full Album</album>
+    </albums>
+    <debutYear>2015</debutYear>
+  </song>
+  <song id="3">
+    <songTitle>How You Like That</songTitle>
+    <artist>Blackpink</artist>
+    <albums>
+      <album>Square One</album>
+      <album>Square Two</album>
+      <album>Square Up</album>
+    </albums>
+    <debutYear>2016</debutYear>
+  </song>
+  <song id="4">
+    <songTitle>Yellow</songTitle>
+    <artist>Coldplay</artist>
+    <albums>
+      <album>Parachutes</album>
+      <album>A Rush of Blood to the Head</album>
+      <album>Viva la Vida</album>
+    </albums>
+    <debutYear>1997</debutYear>
+  </song>
+  <song id="5">
+    <songTitle>Believer</songTitle>
+    <artist>Imagine Dragons</artist>
+    <albums>
+      <album>Origins</album>
+      <album>Smoke + Mirrors</album>
+      <album>Night Visions</album> 
+    </albums>
+    <debutYear>2012</debutYear>
+  </song>
+</music>
